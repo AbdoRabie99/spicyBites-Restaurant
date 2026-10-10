@@ -1,17 +1,94 @@
-# React + Vite
+# 🌶️ SpicyBites Restaurant
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive restaurant website built with **React.js, Vite, and Tailwind CSS**. SpicyBites provides an engaging user experience with an attractive design, interactive menu, and smooth animations.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Coming Soon
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🎨 Modern and attractive restaurant UI
+- 📱 Responsive design for different screen sizes
+- 🍽️ Interactive food menu
+- 🧑‍🍳 Animated chef illustrations
+- ⭐ Features and benefits section
+- 🤝 Partners and delivery service section
+- 📞 Contact section
+- 🦶 Organized footer with useful links
 
-## Expanding the ESLint configuration
+## 🛠️ Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-"# spicyBites-Restaurant" 
+- React.js
+- Vite
+- Tailwind CSS
+- JavaScript (ES6+)
+- CSS3
+- Lottie Animations
+- Lucide React Icons
+
+## 📂 Project Structure
+
+```text
+spicyBites/
+├── public/
+├── src/
+│   ├── assets/
+│   ├── Footer/
+│   ├── Header/
+│   ├── Hero/
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+├── index.html
+├── package.json
+└── vite.config.js
+```
+
+## ⚙️ Getting Started
+
+Follow these steps to run the project locally.
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/AbdoRabie99/spicyBites-Restaurant.git
+```
+
+### 2. Navigate to the project directory
+
+```bash
+cd spicyBites-Restaurant
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Start the development server
+
+```bash
+npm run dev
+```
+
+Open the local URL shown in your terminal to view the website.
+
+## 📌 Future Improvements
+
+- Add online food ordering functionality
+- Integrate a backend and database
+- Add customer reviews and ratings
+- Improve accessibility and performance
+
+## 👨‍💻 Author
+
+**Abdo Rabie**
+
+- GitHub: [@AbdoRabie99](https://github.com/AbdoRabie99)
+- LinkedIn: [Abdo Rabie](https://www.linkedin.com/in/abdo-rabie-419375250/)
+
+---
+
+⭐ If you like this project, feel free to explore the repository!
