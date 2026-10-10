@@ -1,0 +1,56 @@
+@import "tailwindcss";
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-360 {
+  animation: rotate360 10s linear infinite;
+}
+
+.partners {
+  overflow: hidden;
+}
+
+.partners img {
+  width: 300px;
+  margin: 0 30px;
+  flex-shrink: 0;
+
+  animation: sponsorsMove 16s linear infinite;
+
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 15%,
+    black 85%,
+    transparent
+  );
+
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 15%,
+    black 85%,
+    transparent
+  );
+}
+
+@keyframes sponsorsMove {
+  from {
+    transform: translateX(100vw);
+  }
+
+  to {
+    transform: translateX(-100vw);
+  }
+}
