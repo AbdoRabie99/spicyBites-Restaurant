@@ -8,7 +8,7 @@ import starOutline from "../assets/star-outline.png";
 export default function Hero() {
   return (
     <section id="home" className="w-full overflow-hidden bg-amber-50">
-      <div className="container mx-auto grid min-h-[600] grid-cols-1 items-center gap-10 py-12 sm:py-16 lg:min-h-[650px] lg:grid-cols-2 lg:gap-8 lg:py-10">
+      <div className="container mx-auto grid min-h-[600] grid-cols-1 items-center gap-10 py-12 sm:py-16 lg:min-h-[650] lg:grid-cols-2 lg:gap-8 lg:py-10">
         {/* Left Side */}
         <div className="flex min-w-0 flex-col items-center text-center lg:items-start lg:text-left">
           {/* App Stores */}
@@ -52,22 +52,21 @@ export default function Hero() {
         </div>
 
         {/* Right Side - Pizza */}
-        <div className="relative mx-auto w-full max-w-[500px] min-w-0 px-4 sm:px-8 lg:max-w-none lg:px-0">
-          {/* Pizza Image */}
+        <div className="relative mx-auto w-full max-w-[400] min-w-0 px-4 sm:px-8 lg:max-w-[440] lg:px-0">
           <img
-            className="rotate-360 mx-auto w-full max-w-[420px] object-contain lg:max-w-full"
+            className="rotate-360 mx-auto block w-full max-w-[360] object-contain lg:max-w-full"
             src={pizza}
             alt="Delicious pizza"
           />
 
           {/* Fast Delivery Badge */}
-          <div className="absolute bottom-[8%] right-0 flex max-w-[155px] items-center gap-2 rounded-full bg-amber-50 p-3 text-xs font-bold shadow-xl sm:right-2 sm:max-w-[175px] sm:p-4 sm:text-sm lg:-right-2">
+          <div className="absolute bottom-[14%] right-0 flex max-w-[155] items-center gap-2 rounded-full bg-amber-50 p-3 text-xs font-bold shadow-xl sm:right-2 sm:max-w-[175px] sm:p-4 sm:text-sm lg:-right-2">
             <img className="w-8 shrink-0 sm:w-10" src={time} alt="" />
             <p>Super Fast Delivery</p>
           </div>
 
           {/* Rating Badge */}
-          <div className="absolute right-0 top-0 flex flex-col items-center rounded-full bg-amber-50 p-3 font-bold shadow-xl sm:right-4 sm:p-4 lg:right-4">
+          <div className="absolute right-0 top-[14%] flex flex-col items-center rounded-full bg-amber-50 p-3 font-bold shadow-xl sm:right-4 sm:p-4 lg:right-4">
             <p className="text-sm sm:text-base">Good Rating</p>
 
             <div className="flex">

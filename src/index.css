@@ -55,35 +55,61 @@ button {
 }
 
 .partners {
+  width: 100%;
   overflow: hidden;
-}
-
-.partners img {
-  animation: sponsorsMove 16s linear infinite;
 
   -webkit-mask-image: linear-gradient(
     to right,
     transparent,
-    black 15%,
-    black 85%,
+    black 10%,
+    black 90%,
     transparent
   );
 
   mask-image: linear-gradient(
     to right,
     transparent,
-    black 15%,
-    black 85%,
+    black 10%,
+    black 90%,
     transparent
   );
 }
 
+.partners-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: sponsorsMove 20s linear infinite;
+}
+
+.partners-track img {
+  display: block;
+  flex: 0 0 120px;
+  width: 120px;
+  height: 60px;
+  margin-inline: 20px;
+  object-fit: contain;
+}
+
+.partners-track:hover {
+  animation-play-state: paused;
+}
+
+@media (min-width: 640px) {
+  .partners-track img {
+    flex-basis: 150px;
+    width: 150px;
+    height: 70px;
+    margin-inline: 28px;
+  }
+}
+
 @keyframes sponsorsMove {
   from {
-    transform: translateX(100vw);
+    transform: translateX(0);
   }
 
   to {
-    transform: translateX(-100vw);
+    transform: translateX(-50%);
   }
 }
