@@ -25,27 +25,35 @@ export default function Card() {
   ];
 
   return (
-    <div className="flex gap-6">
-      {Menu.map((item) => {
-        return (
-          <div
-            key={item.id}
-            className="bg-white p-5 rounded-xl w-92 mt-12 flex justify-between items-center flex-col"
-          >
-            <img src={item.img} alt={item.title} className="w-4/5" />
+    <div className="mt-8 grid grid-cols-1 items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {Menu.map((item) => (
+        <article
+          key={item.id}
+          className="flex min-w-0 flex-col items-center rounded-2xl bg-white p-5 shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-6"
+        >
+          {/* Dish Image */}
+          <img
+            src={item.img}
+            alt={item.title}
+            className="aspect-square w-full max-w-[280px] object-contain"
+          />
 
-            <div className="text-center p-4">
-              <h2 className="text-xl font-bold">{item.title}</h2>
+          {/* Dish Details */}
+          <div className="flex flex-1 flex-col items-center text-center">
+            <h3 className="mt-4 text-xl font-bold text-gray-900">
+              {item.title}
+            </h3>
 
-              <p>{item.des}</p>
-            </div>
+            <p className="mt-3 text-sm leading-6 text-gray-600 sm:text-base">
+              {item.des}
+            </p>
 
-            <button className="bg-red-600 text-white px-4 py-2 rounded">
+            <button className="mt-6 rounded-lg bg-red-600 px-6 py-3 font-semibold text-white transition hover:bg-red-700">
               Order Now
             </button>
           </div>
-        );
-      })}
+        </article>
+      ))}
     </div>
   );
 }

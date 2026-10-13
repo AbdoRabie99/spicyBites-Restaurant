@@ -1,19 +1,34 @@
+import { Menu } from "lucide-react";
 import logo from "../assets/chili-pepper.png";
+import MenuItems from "./MenuItems";
+import { useState } from "react";
 
 export default function MyHeader() {
+  const [open, setOpen] = useState(false);
+  const openSideMenu = () => {
+    setOpen(!open);
+  };
+  const closeMenu = () => {
+    setOpen(false);
+  };
   return (
     <>
       {/* Container */}
-      <div className="w-full bg-orange-100 sticky top-0 z-10">
-        <div className="flex justify-between items-center w-4/5 m-auto p-4">
-          <div className="flex justify-center items-center w-12">
-            <img src={logo} alt="" />
-            <h3 className="font-bold text-md">
+      <div className="w-full bg-orange-100 sticky z-500">
+        <div className="container flex justify-between items-center m-auto p-4">
+          <div className="flex shrink-0 items-center gap-2">
+            <img
+              src={logo}
+              alt="SpicyBites logo"
+              className="h-10 w-10 shrink-0 object-contain"
+            />
+
+            <h3 className="whitespace-nowrap text-base font-bold">
               <span className="text-red-500">Spicy</span>Bites
             </h3>
           </div>
           {/* Header Menu */}
-          <div className="flex justify-between items-center">
+          <div className="hidden md:block justify-between items-center">
             <ul className="flex gap-4 font-bold ">
               <li className="p-3">
                 <a href="#home">Home</a>
@@ -32,6 +47,19 @@ export default function MyHeader() {
               </li>
             </ul>
           </div>
+          <div className="block md:hidden cursor-pointer">
+            <Menu onClick={openSideMenu} />
+          </div>
+          {/* Mobile Menu */}
+          {open && (
+            <div
+              className={`fixed top-[80] right-0 bottom-0 w-[300] bg-amber-50 p-4 md:hidden
+              transition-transform duration-300 ease-in-out
+              ${open ? "translate-x-0" : "translate-x-full"}`}
+            >
+              <MenuItems closeMenu={closeMenu} />
+            </div>
+          )}
         </div>
       </div>
     </>

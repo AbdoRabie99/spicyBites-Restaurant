@@ -16,50 +16,138 @@ export default function Contact() {
       animationData: delivery,
     });
 
-    return () => anim.destroy(); // تنظيف الأنيميشن عند إغلاق المكون
+    return () => anim.destroy();
   }, []);
+
   return (
-    <>
-      <div
-        id="contact"
-        className="flex flex-col justify-between items-center w-full"
-      >
-        <h1 className="text-4xl font-bold my-8 text-red-500">Contact Us</h1>
-        <div className="flex justify-center items-center">
-          <p>
+    <section
+      id="contact"
+      className="w-full overflow-hidden bg-white py-12 sm:py-16"
+    >
+      <div className="container mx-auto">
+        {/* Heading */}
+        <div className="mb-8 text-center sm:mb-12">
+          <h2 className="mb-4 text-3xl font-bold text-red-500 sm:text-4xl">
+            Contact Us
+          </h2>
+
+          <p className="mx-auto max-w-2xl text-sm leading-7 text-gray-600 sm:text-base">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam,
             inventore.
           </p>
         </div>
-        <div className="grid grid-cols-2 gap-4 justify-center justify-items-center p-8">
-          <div className="animation">
-            <div ref={containerRef} className="w-full h-full" />
+
+        {/* Main Content */}
+        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-12">
+          {/* Animation */}
+          <div className="mx-auto h-[280px] w-full max-w-[420px] sm:h-[360px] lg:h-[420px] lg:max-w-none">
+            <div ref={containerRef} className="h-full w-full" />
           </div>
-          <form action="" className="bg-orange-100 mt-4 rounded-2xl p-4">
-            <div className="flex items-center px-4 gap-4">
-              <div className="firstName flex flex-col w-1/2 p-1">
-                <label htmlFor="">First Name</label>
-                <input type="text" className="bg-white mt-2" />
+
+          {/* Contact Form */}
+          <form
+            onSubmit={(e) => e.preventDefault()}
+            className="w-full min-w-0 rounded-2xl bg-orange-100 p-4 sm:p-6 lg:p-8"
+          >
+            {/* First Name & Last Name */}
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div className="flex min-w-0 flex-col">
+                <label
+                  htmlFor="firstName"
+                  className="mb-2 font-medium text-gray-800"
+                >
+                  First Name
+                </label>
+
+                <input
+                  id="firstName"
+                  name="firstName"
+                  type="text"
+                  autoComplete="given-name"
+                  placeholder="Enter your first name"
+                  className="w-full rounded-lg border border-gray-200 bg-white p-3 outline-none transition focus:border-red-500"
+                />
               </div>
-              <div className="lastName flex-col min-w-1/2 p-1">
-                <label htmlFor="">Last Name</label>
-                <input type="text" className="bg-white mt-2 w-full" />
+
+              <div className="flex min-w-0 flex-col">
+                <label
+                  htmlFor="lastName"
+                  className="mb-2 font-medium text-gray-800"
+                >
+                  Last Name
+                </label>
+
+                <input
+                  id="lastName"
+                  name="lastName"
+                  type="text"
+                  autoComplete="family-name"
+                  placeholder="Enter your last name"
+                  className="w-full rounded-lg border border-gray-200 bg-white p-3 outline-none transition focus:border-red-500"
+                />
               </div>
             </div>
-            <div className="flex flex-col px-4 ">
-              <label htmlFor="">Email</label>
-              <input type="text" className="bg-white p-1 mt-2 w-full" />
-              <label htmlFor="">Phone Number</label>
-              <input type="text" className="bg-white p-1 mt-2 w-full" />
-              <label htmlFor="">Message</label>
-              <textarea className="bg-white p-1 mt-2 w-full" rows="5" />
-              <button className="bg-red-500 text-white p-1 my-8 rounded-2xl">
-                Let's talk
-              </button>
+
+            {/* Email */}
+            <div className="mt-4 flex flex-col">
+              <label htmlFor="email" className="mb-2 font-medium text-gray-800">
+                Email
+              </label>
+
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autoComplete="email"
+                placeholder="example@email.com"
+                className="w-full rounded-lg border border-gray-200 bg-white p-3 outline-none transition focus:border-red-500"
+              />
             </div>
+
+            {/* Phone Number */}
+            <div className="mt-4 flex flex-col">
+              <label htmlFor="phone" className="mb-2 font-medium text-gray-800">
+                Phone Number
+              </label>
+
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                autoComplete="tel"
+                placeholder="Enter your phone number"
+                className="w-full rounded-lg border border-gray-200 bg-white p-3 outline-none transition focus:border-red-500"
+              />
+            </div>
+
+            {/* Message */}
+            <div className="mt-4 flex flex-col">
+              <label
+                htmlFor="message"
+                className="mb-2 font-medium text-gray-800"
+              >
+                Message
+              </label>
+
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Write your message..."
+                rows={5}
+                className="w-full resize-y rounded-lg border border-gray-200 bg-white p-3 outline-none transition focus:border-red-500"
+              />
+            </div>
+
+            {/* Submit Button */}
+            <button
+              type="submit"
+              className="mt-6 w-full rounded-xl bg-red-500 px-6 py-3 font-semibold text-white transition hover:bg-red-600 sm:w-auto"
+            >
+              Let's talk
+            </button>
           </form>
         </div>
       </div>
-    </>
+    </section>
   );
 }

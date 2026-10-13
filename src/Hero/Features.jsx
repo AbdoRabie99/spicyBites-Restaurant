@@ -18,34 +18,49 @@ export default function Features() {
       animationData: chefAnimation,
     });
 
-    return () => anim.destroy(); // تنظيف الأنيميشن عند إغلاق المكون
+    return () => anim.destroy();
   }, []);
 
   return (
-    <div className="w-full bg-amber-50 py-16">
-      <div className="container mx-auto flex items-center justify-between gap-10 px-4">
-        <div className="w-1/2 h-100 flex justify-center items-center">
-          <div ref={containerRef} className="w-full h-full" />
+    <section className="w-full bg-amber-50 py-12 sm:py-16 lg:py-20">
+      <div className="container mx-auto grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
+        {/* Animation */}
+        <div className="mx-auto flex h-[280] w-full max-w-[420] items-center justify-center sm:h-[360] lg:h-[420] lg:max-w-none">
+          <div ref={containerRef} className="h-full w-full" />
         </div>
 
-        <div className="w-1/2">
-          <h1 className="text-xl font-bold text-amber-600">KEY FEATURES</h1>
+        {/* Content */}
+        <div className="flex min-w-0 flex-col items-center text-center lg:items-start lg:text-left">
+          <h2 className="text-lg font-bold text-amber-600 sm:text-xl">
+            KEY FEATURES
+          </h2>
 
-          <p className="text-5xl font-bold my-2 w-3/4">
+          <h3 className="my-3 text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
             Enjoy a Seamless <span className="text-amber-600">Ordering</span>{" "}
             Experience
+          </h3>
+
+          <p className="max-w-xl text-sm leading-7 text-gray-600 sm:text-base">
+            From fast delivery to a wide selection of cuisines, our food
+            ordering service has everything you need to satisfy your cravings.
           </p>
 
-          <p className="text-gray-600">
-            From fast delivery to a wide selection of cuisines, our food
-            ordering service has everything you need to satisfy your cravings
-          </p>
-          <div className="flex mt-4">
-            <img className="w-32" src={playstore} alt="playstore" />
-            <img className="w-32" src={appstore} alt="appstore" />
+          {/* App Store Images */}
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+            <img
+              className="w-28 sm:w-32"
+              src={playstore}
+              alt="Get it on Google Play"
+            />
+
+            <img
+              className="w-28 sm:w-32"
+              src={appstore}
+              alt="Download on the App Store"
+            />
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

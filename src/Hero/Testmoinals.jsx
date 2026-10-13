@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 
 import "./styles.css";
 
-// import required modules
+// Import required modules
 import { FreeMode, Pagination } from "swiper/modules";
 
 import star from "../assets/star.png";
@@ -47,43 +47,69 @@ export default function Testmoinals() {
       text: "A wonderful dining experience! The fusion of flavors in their signature dishes is truly unique and delightful.",
     },
   ];
+
   return (
-    <div className="flex justify-center items-center w-full h-full mt-4 mb-16">
-      <div className="flex flex-col justify-center items-center text-center content w-2/3 ">
-        <h1 className="text-4xl font-bold my-12">What Our Customers Say</h1>
+    <section className="w-full overflow-hidden py-10 sm:py-14 lg:py-16">
+      <div className="container mx-auto">
+        {/* Section Heading */}
+        <div className="mb-8 text-center sm:mb-10">
+          <h2 className="text-3xl font-bold sm:text-4xl lg:text-5xl">
+            What Our Customers Say
+          </h2>
+        </div>
+
+        {/* Testimonials Slider */}
         <Swiper
-          slidesPerView={3}
-          spaceBetween={30}
+          slidesPerView={1}
+          spaceBetween={16}
           freeMode={true}
           pagination={{
             clickable: true,
           }}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 24,
+            },
+          }}
           modules={[FreeMode, Pagination]}
-          className="mySwiper"
+          className="mySwiper pb-12!"
         >
-          {testimonials.map((item) => {
-            return (
-              <SwiperSlide>
-                <div className="flex flex-col text-left p-4 border border-gray-400 rounded-lg bg-gray-100 shadow-lg  shadow-orange-500">
-                  <div className="flex">
-                    {Array.from({ length: 5 }).map((_, index) => (
-                      <img
-                        key={index}
-                        className="w-6! h-6! "
-                        src={index < item.rating ? star : starOutline}
-                        alt=""
-                      />
-                    ))}
-                  </div>
-                  <div className="text-[15px] py-4">{item.text}</div>
-                  <div className="text-red-500">{item.name}</div>
-                  <div>CEO, Website Builders</div>
+          {testimonials.map((item) => (
+            <SwiperSlide key={item.id} className="h-auto!">
+              <div className="flex h-full flex-col rounded-xl border border-gray-200 bg-gray-100 p-4 text-left shadow-lg shadow-orange-500/20 sm:p-6">
+                {/* Stars */}
+                <div className="flex gap-1">
+                  {Array.from({ length: 5 }).map((_, index) => (
+                    <img
+                      key={index}
+                      className="h-5! w-5! sm:h-6! sm:w-6!"
+                      src={index < item.rating ? star : starOutline}
+                      alt=""
+                    />
+                  ))}
                 </div>
-              </SwiperSlide>
-            );
-          })}
+
+                {/* Review */}
+                <p className="flex-1 py-4 text-sm leading-6 text-gray-700 sm:text-base">
+                  {item.text}
+                </p>
+
+                {/* Customer Name */}
+                <h3 className="font-semibold text-red-500">{item.name}</h3>
+
+                <p className="mt-1 text-sm text-gray-500">
+                  CEO, Website Builders
+                </p>
+              </div>
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
-    </div>
+    </section>
   );
 }
